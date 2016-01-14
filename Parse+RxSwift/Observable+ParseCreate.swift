@@ -8,8 +8,8 @@
 
 import RxSwift
 
-func createWithParseCallback<T>(callback: (ObserverOf<T> -> Void)) -> Observable<T> {
-    return create({ (observer: ObserverOf<T>) -> Disposable in
+func createWithParseCallback<T>(callback: (AnyObserver<T> -> Void)) -> Observable<T> {
+    return Observable.create({ (observer: AnyObserver<T>) -> Disposable in
         callback(observer)
         return NopDisposable.instance
     })
