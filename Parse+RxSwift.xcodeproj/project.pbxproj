@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46DE57641C476D41003042C1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46DE57591C476D41003042C1 /* Info.plist */; };
 		46DE57651C476D41003042C1 /* Observable+ParseCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE575A1C476D41003042C1 /* Observable+ParseCreate.swift */; };
 		46DE57661C476D41003042C1 /* Parse-RxSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 46DE575B1C476D41003042C1 /* Parse-RxSwift.h */; };
 		46DE57671C476D41003042C1 /* ParseRxCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE575C1C476D41003042C1 /* ParseRxCallbacks.swift */; };
@@ -18,7 +17,29 @@
 		46DE576C1C476D41003042C1 /* PFPush+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE57611C476D41003042C1 /* PFPush+Rx.swift */; };
 		46DE576D1C476D41003042C1 /* PFQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE57621C476D41003042C1 /* PFQuery+Rx.swift */; };
 		46DE576E1C476D41003042C1 /* PFUser+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE57631C476D41003042C1 /* PFUser+Rx.swift */; };
+		46DE57701C4774B6003042C1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46DE576F1C4774B6003042C1 /* RxSwift.framework */; };
+		46DE57751C47757B003042C1 /* RxSwift.framework.dSYM in Copy Carthage DYSMs */ = {isa = PBXBuildFile; fileRef = 46DE57741C47757B003042C1 /* RxSwift.framework.dSYM */; };
+		46DE57771C47761E003042C1 /* Bolts.framework.dSYM in Copy Carthage DYSMs */ = {isa = PBXBuildFile; fileRef = 46DE57761C47761E003042C1 /* Bolts.framework.dSYM */; };
+		46DE57791C477678003042C1 /* Parse.framework.dSYM in Copy Carthage DYSMs */ = {isa = PBXBuildFile; fileRef = 46DE57781C477678003042C1 /* Parse.framework.dSYM */; };
+		46DE577C1C477685003042C1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46DE577A1C477685003042C1 /* Bolts.framework */; };
+		46DE577D1C477685003042C1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46DE577B1C477685003042C1 /* Parse.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		46DE57731C47750F003042C1 /* Copy Carthage DYSMs */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				46DE57751C47757B003042C1 /* RxSwift.framework.dSYM in Copy Carthage DYSMs */,
+				46DE57771C47761E003042C1 /* Bolts.framework.dSYM in Copy Carthage DYSMs */,
+				46DE57791C477678003042C1 /* Parse.framework.dSYM in Copy Carthage DYSMs */,
+			);
+			name = "Copy Carthage DYSMs";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		46DE574D1C476CF1003042C1 /* Parse_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +54,12 @@
 		46DE57611C476D41003042C1 /* PFPush+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFPush+Rx.swift"; sourceTree = "<group>"; };
 		46DE57621C476D41003042C1 /* PFQuery+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFQuery+Rx.swift"; sourceTree = "<group>"; };
 		46DE57631C476D41003042C1 /* PFUser+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFUser+Rx.swift"; sourceTree = "<group>"; };
+		46DE576F1C4774B6003042C1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		46DE57741C47757B003042C1 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
+		46DE57761C47761E003042C1 /* Bolts.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Bolts.framework.dSYM; path = Carthage/Build/iOS/Bolts.framework.dSYM; sourceTree = "<group>"; };
+		46DE57781C477678003042C1 /* Parse.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Parse.framework.dSYM; path = Carthage/Build/iOS/Parse.framework.dSYM; sourceTree = "<group>"; };
+		46DE577A1C477685003042C1 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
+		46DE577B1C477685003042C1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46DE57701C4774B6003042C1 /* RxSwift.framework in Frameworks */,
+				46DE577D1C477685003042C1 /* Parse.framework in Frameworks */,
+				46DE577C1C477685003042C1 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				46DE57581C476D41003042C1 /* Parse+RxSwift */,
+				46DE57711C4774C1003042C1 /* Frameworks */,
 				46DE574E1C476CF1003042C1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +111,19 @@
 			path = "Parse+RxSwift";
 			sourceTree = "<group>";
 		};
+		46DE57711C4774C1003042C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46DE576F1C4774B6003042C1 /* RxSwift.framework */,
+				46DE57741C47757B003042C1 /* RxSwift.framework.dSYM */,
+				46DE577B1C477685003042C1 /* Parse.framework */,
+				46DE57781C477678003042C1 /* Parse.framework.dSYM */,
+				46DE577A1C477685003042C1 /* Bolts.framework */,
+				46DE57761C47761E003042C1 /* Bolts.framework.dSYM */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -102,6 +146,8 @@
 				46DE57491C476CF1003042C1 /* Frameworks */,
 				46DE574A1C476CF1003042C1 /* Headers */,
 				46DE574B1C476CF1003042C1 /* Resources */,
+				46DE57721C47750C003042C1 /* Copy Carthage Frameworks */,
+				46DE57731C47750F003042C1 /* Copy Carthage DYSMs */,
 			);
 			buildRules = (
 			);
@@ -148,11 +194,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46DE57641C476D41003042C1 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46DE57721C47750C003042C1 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Parse.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46DE57481C476CF1003042C1 /* Sources */ = {
@@ -270,6 +335,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -286,6 +355,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
