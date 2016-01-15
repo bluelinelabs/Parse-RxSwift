@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "46DE574C1C476CF1003042C1"
-               BuildableName = "Parse+RxSwift.framework"
+               BuildableName = "Parse_RxSwift.framework"
                BlueprintName = "Parse+RxSwift"
                ReferencedContainer = "container:Parse+RxSwift.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46DE574C1C476CF1003042C1"
-            BuildableName = "Parse+RxSwift.framework"
+            BuildableName = "Parse_RxSwift.framework"
             BlueprintName = "Parse+RxSwift"
             ReferencedContainer = "container:Parse+RxSwift.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46DE574C1C476CF1003042C1"
-            BuildableName = "Parse+RxSwift.framework"
+            BuildableName = "Parse_RxSwift.framework"
             BlueprintName = "Parse+RxSwift"
             ReferencedContainer = "container:Parse+RxSwift.xcodeproj">
          </BuildableReference>
