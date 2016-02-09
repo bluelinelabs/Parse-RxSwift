@@ -1,0 +1,2 @@
+github "ReactiveX/RxSwift" ~> 2.0
+github "ParsePlatform/Parse-SDK-iOS-OSX" "master"
