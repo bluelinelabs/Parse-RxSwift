@@ -18,28 +18,9 @@
 		46DE576D1C476D41003042C1 /* PFQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE57621C476D41003042C1 /* PFQuery+Rx.swift */; };
 		46DE576E1C476D41003042C1 /* PFUser+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DE57631C476D41003042C1 /* PFUser+Rx.swift */; };
 		46DE57701C4774B6003042C1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46DE576F1C4774B6003042C1 /* RxSwift.framework */; };
-		46DE57751C47757B003042C1 /* RxSwift.framework.dSYM in Copy Carthage DYSMs */ = {isa = PBXBuildFile; fileRef = 46DE57741C47757B003042C1 /* RxSwift.framework.dSYM */; };
-		46DE57771C47761E003042C1 /* Bolts.framework.dSYM in Copy Carthage DYSMs */ = {isa = PBXBuildFile; fileRef = 46DE57761C47761E003042C1 /* Bolts.framework.dSYM */; };
-		46DE57791C477678003042C1 /* Parse.framework.dSYM in Copy Carthage DYSMs */ = {isa = PBXBuildFile; fileRef = 46DE57781C477678003042C1 /* Parse.framework.dSYM */; };
 		46DE577C1C477685003042C1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46DE577A1C477685003042C1 /* Bolts.framework */; };
 		46DE577D1C477685003042C1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46DE577B1C477685003042C1 /* Parse.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		46DE57731C47750F003042C1 /* Copy Carthage DYSMs */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				46DE57751C47757B003042C1 /* RxSwift.framework.dSYM in Copy Carthage DYSMs */,
-				46DE57771C47761E003042C1 /* Bolts.framework.dSYM in Copy Carthage DYSMs */,
-				46DE57791C477678003042C1 /* Parse.framework.dSYM in Copy Carthage DYSMs */,
-			);
-			name = "Copy Carthage DYSMs";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		46DE574D1C476CF1003042C1 /* Parse_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,9 +36,6 @@
 		46DE57621C476D41003042C1 /* PFQuery+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFQuery+Rx.swift"; sourceTree = "<group>"; };
 		46DE57631C476D41003042C1 /* PFUser+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFUser+Rx.swift"; sourceTree = "<group>"; };
 		46DE576F1C4774B6003042C1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		46DE57741C47757B003042C1 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
-		46DE57761C47761E003042C1 /* Bolts.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Bolts.framework.dSYM; path = Carthage/Build/iOS/Bolts.framework.dSYM; sourceTree = "<group>"; };
-		46DE57781C477678003042C1 /* Parse.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Parse.framework.dSYM; path = Carthage/Build/iOS/Parse.framework.dSYM; sourceTree = "<group>"; };
 		46DE577A1C477685003042C1 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		46DE577B1C477685003042C1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,11 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				46DE576F1C4774B6003042C1 /* RxSwift.framework */,
-				46DE57741C47757B003042C1 /* RxSwift.framework.dSYM */,
 				46DE577B1C477685003042C1 /* Parse.framework */,
-				46DE57781C477678003042C1 /* Parse.framework.dSYM */,
 				46DE577A1C477685003042C1 /* Bolts.framework */,
-				46DE57761C47761E003042C1 /* Bolts.framework.dSYM */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,8 +121,6 @@
 				46DE57491C476CF1003042C1 /* Frameworks */,
 				46DE574A1C476CF1003042C1 /* Headers */,
 				46DE574B1C476CF1003042C1 /* Resources */,
-				46DE57721C47750C003042C1 /* Copy Carthage Frameworks */,
-				46DE57731C47750F003042C1 /* Copy Carthage DYSMs */,
 			);
 			buildRules = (
 			);
@@ -164,11 +137,12 @@
 		46DE57441C476CF1003042C1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Andrew Breckenridge";
 				TargetAttributes = {
 					46DE574C1C476CF1003042C1 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -198,26 +172,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		46DE57721C47750C003042C1 /* Copy Carthage Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Parse.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
-			);
-			name = "Copy Carthage Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46DE57481C476CF1003042C1 /* Sources */ = {
@@ -252,8 +206,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -300,8 +256,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -321,6 +279,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -331,6 +290,7 @@
 		46DE57561C476CF1003042C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -345,12 +305,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "bluelinelabs.Parse-RxSwift";
 				PRODUCT_NAME = Parse_RxSwift;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		46DE57571C476CF1003042C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -365,6 +327,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "bluelinelabs.Parse-RxSwift";
 				PRODUCT_NAME = Parse_RxSwift;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

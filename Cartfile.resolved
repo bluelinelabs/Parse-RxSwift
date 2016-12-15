@@ -1,3 +1,3 @@
-github "BoltsFramework/Bolts-iOS" "1.6.0"
-github "ReactiveX/RxSwift" "2.1.0"
-github "ParsePlatform/Parse-SDK-iOS-OSX" "9eeea3f24acb6f676ee498763feff44cd1074bf4"
+github "BoltsFramework/Bolts-ObjC" "1.8.4"
+github "ReactiveX/RxSwift" "3.0.1"
+github "ParsePlatform/Parse-SDK-iOS-OSX" "7a820b75c6726808475af9ce705053ff0e8cbd11"

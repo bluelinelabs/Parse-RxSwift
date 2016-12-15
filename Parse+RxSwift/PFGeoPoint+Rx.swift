@@ -9,12 +9,10 @@
 import RxSwift
 import Parse
 
-extension PFGeoPoint {
-    
-    public static func rx_geoPointForCurrentLocation() -> Observable<PFGeoPoint> {
+extension Reactive where Base : PFGeoPoint {
+    public static func geoPointForCurrentLocation() -> Observable<PFGeoPoint> {
         return createWithParseCallback({ observer in
-            self.geoPointForCurrentLocationInBackground(ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer))
+            PFGeoPoint.geoPointForCurrentLocation(inBackground: ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer))
         })
     }
-    
 }

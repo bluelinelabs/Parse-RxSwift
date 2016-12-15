@@ -9,12 +9,11 @@
 import RxSwift
 import Parse
 
-extension PFAnonymousUtils {
-    
-    public static func rx_login(username: String, password: String) -> Observable<PFUser> {
+
+extension Reactive where Base : PFAnonymousUtils {
+    public static func rx_login(_ username: String, password: String) -> Observable<PFUser> {
         return createWithParseCallback({ observer in
-            self.logInWithBlock(ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer))
+            PFAnonymousUtils.logIn(block: ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer))
         })
     }
-    
 }
