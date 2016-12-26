@@ -20,6 +20,7 @@
 		46DE57701C4774B6003042C1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46DE576F1C4774B6003042C1 /* RxSwift.framework */; };
 		46DE577C1C477685003042C1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46DE577A1C477685003042C1 /* Bolts.framework */; };
 		46DE577D1C477685003042C1 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46DE577B1C477685003042C1 /* Parse.framework */; };
+		B95365621E117DB100E48E6A /* PFFile+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95365611E117DB100E48E6A /* PFFile+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		46DE576F1C4774B6003042C1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		46DE577A1C477685003042C1 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		46DE577B1C477685003042C1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
+		B95365611E117DB100E48E6A /* PFFile+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFFile+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				46DE57611C476D41003042C1 /* PFPush+Rx.swift */,
 				46DE57621C476D41003042C1 /* PFQuery+Rx.swift */,
 				46DE57631C476D41003042C1 /* PFUser+Rx.swift */,
+				B95365611E117DB100E48E6A /* PFFile+Rx.swift */,
 			);
 			path = "Parse+RxSwift";
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				46DE576D1C476D41003042C1 /* PFQuery+Rx.swift in Sources */,
 				46DE57671C476D41003042C1 /* ParseRxCallbacks.swift in Sources */,
 				46DE576B1C476D41003042C1 /* PFObject+Rx.swift in Sources */,
+				B95365621E117DB100E48E6A /* PFFile+Rx.swift in Sources */,
 				46DE57651C476D41003042C1 /* Observable+ParseCreate.swift in Sources */,
 				46DE576E1C476D41003042C1 /* PFUser+Rx.swift in Sources */,
 			);
