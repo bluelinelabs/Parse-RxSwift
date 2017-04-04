@@ -9,60 +9,103 @@
 import RxSwift
 import Parse
 
-extension PFObject {
-    
-    public func rx_save() -> Observable<Bool> {
+extension Reactive where Base: PFObject {
+    public func save() -> Observable<Bool> {
         return createWithParseCallback({ observer in
-            self.saveInBackgroundWithBlock(ParseRxCallbacks.rx_parseCallback(observer))
+            self.base.saveInBackground(block: ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
-    public func rx_fetch<T: PFObject>() -> Observable<T?> {
+    public func unpin(withName name:String) -> Observable<Bool> {
         return createWithParseCallback({ observer in
-            self.fetchInBackgroundWithBlock(ParseRxCallbacks.rx_parseCallback(observer))
-        })
-        .map({ object in
-            return object as! T?
+            self.base.unpinInBackground(withName: name, block: ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
-    public func rx_fetchIfNeeded<T: PFObject>() -> Observable<T?> {
+    public func fetch<T: PFObject>() -> Observable<T?> {
         return createWithParseCallback({ observer in
-            self.fetchIfNeededInBackgroundWithBlock(ParseRxCallbacks.rx_parseCallback(observer))
-        })
-        .map({ object in
-            return object as! T?
+            self.base.fetchInBackground(block: ParseRxCallbacks.rx_parseCallback(observer))
+        }).map { $0 as! T? }
+    }
+    
+    public func fetchIfNeeded<T: PFObject>() -> Observable<T?> {
+        return createWithParseCallback({ observer in
+            self.base.fetchIfNeededInBackground(block: ParseRxCallbacks.rx_parseCallback(observer))
+        }).map{ $0 as! T? }
+    }
+    
+    public func delete() -> Observable<Bool> {
+        return createWithParseCallback({ observer in
+            self.base.deleteInBackground(block: ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
-    public func rx_delete() -> Observable<Bool> {
+    public static func saveAll(_ objects: [PFObject]) -> Observable<Bool> {
         return createWithParseCallback({ observer in
-            self.deleteInBackgroundWithBlock(ParseRxCallbacks.rx_parseCallback(observer))
+            PFObject.saveAll(inBackground: objects, block: ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
-    public static func rx_saveAll(objects: [PFObject]) -> Observable<Bool> {
+    public static func fetchAll<T: PFObject>(_ objects: [PFObject]) -> Observable<[T]?> {
         return createWithParseCallback({ observer in
-            self.saveAllInBackground(objects, block: ParseRxCallbacks.rx_parseCallback(observer))
+            PFObject.fetchAll(inBackground: objects, block: ParseRxCallbacks.rx_parseCallback(observer))
+        }).map{ $0 as! [T]? }
+    }
+    
+    public static func fetchAllIfNeeded<T: PFObject>(_ objects: [PFObject]) -> Observable<[T]?> {
+        return createWithParseCallback({ observer in
+            PFObject.fetchAllIfNeeded(inBackground: objects, block: ParseRxCallbacks.rx_parseCallback(observer))
+        }).map { $0 as! [T]? }
+    }
+}
+
+// MARK: Local Datastore
+extension Reactive where Base:PFObject {
+    public func saveEventually() -> Observable<Bool> {
+        return createWithParseCallback({ observer in
+            self.base.saveEventually(ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
-    public static func rx_fetchAll<T: PFObject>(objects: [PFObject]) -> Observable<[T]?> {
+    public func pin() -> Observable<Bool> {
         return createWithParseCallback({ observer in
-            self.fetchAllInBackground(objects, block: ParseRxCallbacks.rx_parseCallback(observer))
-        })
-        .map({ objects in
-            return objects as! [T]?
+            self.base.pinInBackground(block: ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
-    public static func rx_fetchAllIfNeeded<T: PFObject>(objects: [PFObject]) -> Observable<[T]?> {
+    public func pin(withName name:String) -> Observable<Bool> {
         return createWithParseCallback({ observer in
-            self.fetchAllIfNeededInBackground(objects, block: ParseRxCallbacks.rx_parseCallback(observer))
-        })
-        .map({ objects in
-            return objects as! [T]?
+            self.base.pinInBackground(withName: name, block: ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
+    public func unpin() -> Observable<Bool> {
+        return createWithParseCallback({ observer in
+            self.base.unpinInBackground(block: ParseRxCallbacks.rx_parseCallback(observer))
+        })
+    }
+    
+    public static func pinAll(_ objects: [PFObject]) -> Observable<Bool> {
+        return createWithParseCallback({ observer in
+            PFObject.pinAll(inBackground: objects, block: ParseRxCallbacks.rx_parseCallback(observer))
+        })
+    }
+    
+    public static func pinAll(_ objects: [PFObject], withName name:String) -> Observable<Bool> {
+        return createWithParseCallback({ observer in
+            PFObject.pinAll(inBackground: objects, withName: name, block: ParseRxCallbacks.rx_parseCallback(observer))
+        })
+    }
+    
+    public static func unpinAll(_ objects: [PFObject]) -> Observable<Bool> {
+        return createWithParseCallback({ observer in
+            PFObject.unpinAll(inBackground: objects, block: ParseRxCallbacks.rx_parseCallback(observer))
+        })
+    }
+    
+    public static func unpinAll(_ objects: [PFObject], withName name:String) -> Observable<Bool> {
+        return createWithParseCallback({ observer in
+            PFObject.unpinAll(inBackground: objects, withName: name, block: ParseRxCallbacks.rx_parseCallback(observer))
+        })
+    }
 }

@@ -9,53 +9,57 @@
 import RxSwift
 import Parse
 
-extension PFPush {
-    
-    public func rx_sendPush() -> Observable<Bool> {
+extension Reactive where Base : PFPush {
+    public func sendPush() -> Observable<Bool> {
         return createWithParseCallback({ observer in
-            self.sendPushInBackgroundWithBlock(ParseRxCallbacks.rx_parseCallback(observer))
+            self.base.sendInBackground(block: ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
-    public static func rx_sendPushMessageToChannel(channel: String, withMessage: String) -> Observable<Bool> {
+    public static func sendPushMessageToChannel(_ channel: String, withMessage: String) -> Observable<Bool> {
         return createWithParseCallback({ observer in
-            self.sendPushMessageToChannelInBackground(channel, withMessage: withMessage, block: ParseRxCallbacks.rx_parseCallback(observer))
+            PFPush.sendMessageToChannel(inBackground: channel, withMessage: withMessage, block: ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
-    public static func rx_sendPushMessageToQuery(query: PFQuery, withMessage: String) -> Observable<Bool> {
+    public static func sendPushMessageToQuery(_ query: PFQuery<PFInstallation>, withMessage: String) -> Observable<Bool> {
         return createWithParseCallback({ observer in
-            self.sendPushMessageToQueryInBackground(query, withMessage: withMessage, block: ParseRxCallbacks.rx_parseCallback(observer))
+            PFPush.sendMessageToQuery(inBackground: query,
+                                    withMessage: withMessage,
+                                    block: ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
-    public static func rx_sendPushDataToChannel(channel: String, withData: Dictionary<NSObject, AnyObject>) -> Observable<Bool> {
+    public static func sendPushDataToChannel(_ channel: String, withData: Dictionary<NSObject, AnyObject>) -> Observable<Bool> {
         return createWithParseCallback({ observer in
-            self.sendPushDataToChannelInBackground(channel, withData: withData, block: ParseRxCallbacks.rx_parseCallback(observer))
+            PFPush.sendDataToChannel(inBackground: channel, withData: withData,
+                                   block: ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
-    public static func rx_sendPushDataToQuery(query: PFQuery, withData: Dictionary<NSObject, AnyObject>) -> Observable<Bool> {
+    public static func sendPushDataToQuery(_ query: PFQuery<PFInstallation>, withData: Dictionary<NSObject, AnyObject>) -> Observable<Bool> {
         return createWithParseCallback({ observer in
-            self.sendPushDataToQueryInBackground(query, withData: withData, block: ParseRxCallbacks.rx_parseCallback(observer))
+            PFPush.sendDataToQuery(inBackground: query,
+                                 withData: withData,
+                                 block: ParseRxCallbacks.rx_parseCallback(observer))
         })
     }
     
-    public static func rx_subscribeToChannel(channel: String) -> Observable<Bool> {
-        return createWithParseCallback({ observer in
-            self.subscribeToChannelInBackground(channel, block: ParseRxCallbacks.rx_parseCallback(observer))
-        })
+    public static func subscribeToChannel(_ channel: String) -> Observable<Bool> {
+        return createWithParseCallback { observer in
+            PFPush.subscribeToChannel(inBackground: channel, block: ParseRxCallbacks.rx_parseCallback(observer))
+        }
     }
     
-    public static func rx_unsubscribeFromChannel(channel: String) -> Observable<Bool> {
-        return createWithParseCallback({ observer in
-            self.unsubscribeFromChannelInBackground(channel, block: ParseRxCallbacks.rx_parseCallback(observer))
-        })
+    public static func unsubscribeFromChannel(_ channel: String) -> Observable<Bool> {
+        return createWithParseCallback { observer in
+            PFPush.unsubscribeFromChannel(inBackground: channel, block: ParseRxCallbacks.rx_parseCallback(observer))
+        }
     }
     
-    public static func rx_getSubscribedChannels() -> Observable<Set<NSObject>> {
-        return createWithParseCallback({ observer in
-            self.getSubscribedChannelsInBackgroundWithBlock(ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer))
-        })
+    public static func getSubscribedChannels() -> Observable<Set<AnyHashable>> {
+        return createWithParseCallback { observer in
+            PFPush.getSubscribedChannelsInBackground(ParseRxCallbacks.rx_parseUnwrappedOptionalCallback(observer))
+        }
     }
 }

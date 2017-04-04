@@ -9,15 +9,10 @@
 import RxSwift
 import Parse
 
-extension PFCloud {
-    
-    public static func rx_callFunction<T>(function: String, withParameters: Dictionary<NSObject, AnyObject>?) -> Observable<T?> {
+extension Reactive where Base : PFCloud {
+    public static func callFunction<T>(_ function: String, withParameters: Dictionary<NSObject, AnyObject>?) -> Observable<T?> {
         return createWithParseCallback({ observer in
-            self.callFunctionInBackground(function, withParameters: withParameters, block: ParseRxCallbacks.rx_parseOptionalCallback(observer))
-        })
-        .map( { result in
-            return result as! T?
-        })
+            PFCloud.callFunction(inBackground: function, withParameters: withParameters, block: ParseRxCallbacks.rx_parseOptionalCallback(observer))
+        }).map { $0 as! T? }
     }
-    
 }

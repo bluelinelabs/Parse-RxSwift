@@ -1,5 +1,5 @@
 # Exclude build artificats
-Carthage/Build
+Carthage/
 
 # Exclude the build directory
 build/*
